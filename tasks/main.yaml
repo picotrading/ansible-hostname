@@ -1,0 +1,6 @@
+---
+
+- name: Set custom hostname
+  hostname:
+    name: "{{ hostname_string }}"
+  when: hostname_string | length > 0

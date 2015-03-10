@@ -4,3 +4,14 @@
   hostname:
     name: "{{ hostname_string }}"
   when: hostname_string | length > 0
+
+- name: Test if /etc/hostname exists
+  stat:
+    path: /etc/hostname
+  register: hostname_file
+
+- name: Change the /etc/hostname
+  template:
+    src: hostname.j2
+    dest: /etc/hostname
+  when: hostname_file.stat.exists

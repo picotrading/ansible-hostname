@@ -37,7 +37,7 @@ List of variables used by the role:
 
 ```
 # Description and default value of the variable
-hostname_string: ''
+hostname_string: 'localhost'
 ```
 
 

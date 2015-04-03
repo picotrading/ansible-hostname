@@ -1,4 +1,4 @@
 ---
 
 # Default hostname string
-hostname_string: 'localhost'
+hostname_string: "{{ inventory_hostname }}"

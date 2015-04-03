@@ -13,7 +13,12 @@ Example
 # Example of the basic usage
 - hosts: myhost
   roles:
-    - role:hostname
+    - hostname
+
+# Example of how to ser a custom hostname
+- hosts: myhost
+  roles:
+    - role: hostname
       hostname_string: myhostname
 ```
 
@@ -37,7 +42,7 @@ List of variables used by the role:
 
 ```
 # Description and default value of the variable
-hostname_string: 'localhost'
+hostname_string: "{{ inventory_hostname }}"
 ```
 
 

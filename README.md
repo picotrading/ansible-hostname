@@ -31,7 +31,7 @@ hostname when the host is a VM run by VirtualBox:
 - hosts: myhost
   roles:
     - role: hostname
-      hostname_string: "{{ inventory_hostname if ansible_virtualization_role == 'guest' and ansible_virtualization_type == 'virtualbox' else '' }}"
+      hostname_string: "{{ inventory_hostname if ansible_virtualization_role == 'guest' and ansible_virtualization_type == 'virtualbox' else ansible_hostname }}"
 ```
 
 

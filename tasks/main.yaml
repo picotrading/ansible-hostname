@@ -3,6 +3,13 @@
 - name: Set custom hostname
   hostname:
     name: "{{ hostname_string }}"
+  register: hostname_change
   when: hostname_string | length > 0
+  tags:
+    - hostname_config
+
+- name: Reload facts
+  setup:
+  when: hostname_change.changed
   tags:
     - hostname_config
